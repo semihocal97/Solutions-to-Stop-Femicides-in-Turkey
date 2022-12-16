@@ -1,0 +1,91 @@
+---
+title: Solutions to Stop Femicides in Turkey 
+author: Semih ÖCAL
+date: (13 December, 2022) 
+output:
+  github_document:
+      toc: true
+bibliography: 'references.bib'
+---
+
+# Abstract
+
+Hundreds of women in Turkey; are killed by their spouses, children, fathers, lovers and many more people they know or do not know.[@tosun2018femicide] In this study, I analyzed the reasons for the murder of women, by whom they were killed and the number of women killed, and talked about the precautions to be taken against femicide.
+
+The data in this article are from 2008. According to the conclusion drawn from this article, the state has a great duty to prevent femicides. Women who are in the process of divorce and who have been subjected to psychological/physical/sexual violence should be protected by the state.
+
+# Introduction
+
+In this article, I will discuss how femicides can be stopped by analyzing the number of femicides committed since 2008 and by whom they were killed. Can femicide be prevented by the state? Can women at risk be protected by the state? The conclusion I expect to emerge from the article is that the state can prevent femicides.
+
+# Femicides Rates in Turkey
+
+The rate of violence against women and femicide in Turkey has been increasing in recent years. In the report published by the OECD in 2019, the rate of women who have suffered physical/sexual violence from men is 38% in Turkey and ranks first in this list.
+
+```{r}
+library(readxl)
+uluslararası <- read_excel("C:/Users/Lenovo/OneDrive/Masaüstü/uluslararası.xlsx")
+View(uluslararası)
+```
+
+```{r echo=FALSE}
+uluslararası
+data.s <- uluslararası$`Percentage of women who have experienced physical or sexual violence by men`
+names(data.s) <- uluslararası$Countries
+data.s
+barplot(data.s, main = "Rates Against Women in Several Countries", ylab = "Rates", las = 2, cex.names = 1, )
+```
+
+The **main reason** for the increase in femicide rates seems to be gender roles. The "punishment" of a woman living in a patriarchal society and trying to make herself exist is normalized and legitimized by society.[@ccetin2014gelenek] An example of this is the headlines of the news in the national media. The news in the national media includes headlines that the murders are an isolated incident, that the murderer has "reason" or that the murderer is a victim.[@gul2015medyada]
+
+One of the biggest causes of femicides in Turkey is the gender roles imposed by social moral rules. These moral rules are fed from patriarchy and their roots are based on religion. According to these rules, the duty of women is motherhood and housework. If the woman goes out of these duties, she is punished by the man within the "social moral rules". After hundreds of murders of women in Turkey, many murderer men said, "I have no regrets, I have cleaned my honor." expressed as. [@tosun2018femicide]
+
+```{r}
+library(readxl)
+Türkiye_de_Kadın_Cinayetleri <- read_excel("C:/Users/Lenovo/OneDrive/Masaüstü/Türkiye'de Kadın Cinayetleri.xlsx")
+View(Türkiye_de_Kadın_Cinayetleri)
+```
+
+```{r echo=FALSE}
+library(ggplot2)
+plot(Türkiye_de_Kadın_Cinayetleri, xlab= "Years", ylab= "Number Of Femicides", type= "o", main = "Number of Femicides in Turkey", las = 1, cex = 1,)
+```
+
+```{r echo=FALSE}
+summary(Türkiye_de_Kadın_Cinayetleri)
+```
+
+The graphic above shows the number of femicides committed in Turkey since 2008. According to this graph, a radical increase has been observed in recent years. The most important reasons for this increase are the fact that the murderer did not receive the necessary punishment, thinks that he has done something to be proud of by the society, applies to the court when a woman is subjected to violence, but the court does not give a decision to suspend the man.[@tosun2018femicide]
+
+```{r}
+library(readxl)
+DATA2 <- read_excel("C:/Users/Lenovo/OneDrive/Masaüstü/DATA2.xlsx")
+View(DATA2)
+```
+
+```{r echo=FALSE}
+require(RColorBrewer)
+pie(DATA2$`Rate (%)`, labels = (DATA2$`The degree of intimacy of the murderer with the woman`), main = "The Degree of Intimacy of the Murderer with the Woman", col = brewer.pal(length(DATA2$`Rate (%)`), "Spectral"))
+```
+
+As seen in the pie chart above, women are mostly killed by their husbands. Then there are people he "knows but is not close to". Most of the men in this group are platonic of women. After being rejected by women, they committed femicide. In the third place is the boyfriend. These results show the effect of social roles in the murders of women.
+
+# Suggestions for Solutions to Stop Femicides
+
+In Turkey, the greatest duty to stop femicides falls to the state. Hundreds of women who are in the process of divorce and threatened by their husbands should be given protection services. Apart from this, there are no deterrent laws in Turkey. The court, on its own initiative, gives a "good conduct discount" to the murderer. A comprehensive law that protects women, children, LGBT+ individuals and all individuals who are minorities in Turkey should be enacted. In this way, laws can be a deterrent and femicide can be prevented.
+
+## İstanbul Convention
+
+It was opened for signature in Istanbul on May 11, 2011 and entered into force on August 1, 2014 with the acceptance of all the countries in the Council of Europe.
+
+The convention, which is the first European convention specifically targeting violence against women and girls and domestic violence, has been ratified by 20 member states of the Council of Europe, including Turkey. The purpose of the Convention is to protect women against all forms of violence and to prevent, prosecute and eliminate violence against women and domestic violence; To contribute to the elimination of all forms of discrimination against women.The Convention is based on "gender-based" discrimination and violence and is the first international document to define gender. [@bakirci2015istanbul]
+
+However, the government in Turkey terminated this contract in 2020 because it found it contrary to "social morality rules".
+
+![](istanbuls%C3%B6zlesmesi.jpg)
+
+# Conclusion
+
+Femicides committed in Turkey are increasing day by day. These murders are mostly committed by people close to the woman and the pretext for most of the murders is "social morality". It is possible to prevent these murders. For this, necessary laws should be enacted and deterrence should be increased.
+
+# REFERENCES
